@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 perPage: 2.5,
             },            
             425: {
-                perPage: 1.2,
+                perPage: 1.0,
             }
         }
     });
