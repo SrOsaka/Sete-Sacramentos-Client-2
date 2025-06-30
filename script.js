@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide('.splide', {
         type: 'loop',
         perPage: 2.5,
+        perMove: 1,
         focus: 'center',
         autoplay: true,
         interval: 4000,
@@ -15,7 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 perPage: 2.5,
             },            
             425: {
-                perPage: 1.2,
+                perPage: 1,
+            },
+            0: {
+                perPage: 1,
             }
         }
     });
@@ -27,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
             splide.options = { perPage: 6 };
         }
     }
+
+    updateSlides();
+    window.addEventListener('resize', updateSlides);
+});
+
 
     updateSlides();
     window.addEventListener('resize', updateSlides);
