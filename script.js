@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide('.splide', {
         type: 'loop',
-        perPage: 2.5,
+        perPage: 1.2,
         focus: 'center',
         autoplay: true,
         interval: 4000,
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 perPage: 2.5,
             },            
             425: {
-                perPage: 1.0,
+                perPage: 1.2,
             }
         }
     });
