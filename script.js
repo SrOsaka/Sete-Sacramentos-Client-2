@@ -2,38 +2,35 @@ document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide('.splide', {
         type: 'loop',
         perPage: 2.5,
-        perMove: 1,
         focus: 'center',
         autoplay: true,
         interval: 4000,
         pauseOnHover: false,
         pauseOnFocus: false,
         breakpoints: {
-            2560: {
-                perPage: 6
-            },
             1440: {
-                perPage: 3.5
+                perPage: 3.5,
             },
             768: {
-                perPage: 2.5
-            },
+                perPage: 2.5,
+            },            
             425: {
-                perPage: 1
-            },
-            0: {
-                perPage: 1
+                perPage: 1.2,
             }
         }
     });
 
     splide.mount();
 
-    window.addEventListener('load', function () {
-        splide.refresh();
-    });
-});
+    function updateSlides() {
+        if (window.innerWidth > 1440) {
+            splide.options = { perPage: 6 };
+        }
+    }
 
+    updateSlides();
+    window.addEventListener('resize', updateSlides);
+});
 
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
