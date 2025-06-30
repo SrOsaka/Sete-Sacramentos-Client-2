@@ -9,37 +9,31 @@ document.addEventListener('DOMContentLoaded', function () {
         pauseOnHover: false,
         pauseOnFocus: false,
         breakpoints: {
+            2560: {
+                perPage: 6
+            },
             1440: {
-                perPage: 3.5,
+                perPage: 3.5
             },
             768: {
-                perPage: 2.5,
-            },            
+                perPage: 2.5
+            },
             425: {
-                perPage: 1,
+                perPage: 1
             },
             0: {
-                perPage: 1,
+                perPage: 1
             }
         }
     });
 
     splide.mount();
 
-    function updateSlides() {
-        if (window.innerWidth > 1440) {
-            splide.options = { perPage: 6 };
-        }
-    }
-
-    updateSlides();
-    window.addEventListener('resize', updateSlides);
+    window.addEventListener('load', function () {
+        splide.refresh();
+    });
 });
 
-
-    updateSlides();
-    window.addEventListener('resize', updateSlides);
-});
 
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
